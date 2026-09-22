@@ -11,50 +11,67 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
 
+
 <style>
-
-/* =========================================================
-   [수정하기 쉬운 설정]
-   여기의 --accent 색상 하나만 바꾸면
-   사이트 전체의 파란색 포인트가 변경돼.
-   ========================================================= */
-
-:root {
-    --accent: #efa1c5;
-    --accent-light: rgba(109, 169, 232, 0.16);
-    --accent-faint: rgba(109, 169, 232, 0.08);
-
-    --black: #111111;
-    --white: #ffffff;
-
-    --content-width: 720px;
-}
-
 
 /* =========================================================
    기본 설정
    ========================================================= */
 
+:root {
+
+    --accent: #4f91ee;
+
+    --accent-light:
+        rgba(79, 145, 238, 0.18);
+
+    --accent-faint:
+        rgba(79, 145, 238, 0.08);
+
+    --black: #111827;
+
+    --white: #ffffff;
+
+    --content-width: 1000px;
+}
+
+
 * {
+
     box-sizing: border-box;
+
     margin: 0;
+
     padding: 0;
 }
 
+
 html {
+
     width: 100%;
+
     min-height: 100%;
-    background: var(--white);
+
+    background:
+        var(--white);
 }
 
+
 body {
+
     width: 100%;
+
     min-height: 100vh;
 
-    background: var(--white);
-    color: var(--black);
+    background:
+        var(--white);
 
-    font-family: "Silkscreen", monospace;
+    color:
+        var(--black);
+
+    font-family:
+        "Silkscreen",
+        monospace;
 
     overflow-x: hidden;
 }
@@ -65,11 +82,13 @@ body {
    ========================================================= */
 
 #snow-background {
+
     position: fixed;
 
     inset: 0;
 
     width: 100%;
+
     height: 100%;
 
     pointer-events: none;
@@ -80,81 +99,93 @@ body {
 }
 
 
-/* 개별 파티클 */
-
 .snow {
+
     position: absolute;
 
     top: -20px;
 
     width: 3px;
+
     height: 3px;
 
-    background: var(--accent);
+    background:
+        var(--accent);
 
     opacity: 0.18;
 
-    filter: blur(0.4px);
+    filter:
+        blur(0.4px);
 
-    animation-name: snow-fall;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
+    animation-name:
+        snow-fall;
+
+    animation-timing-function:
+        linear;
+
+    animation-iteration-count:
+        infinite;
 }
 
 
-/* 크기가 조금 큰 파티클 */
-
 .snow.big {
+
     width: 5px;
+
     height: 5px;
 
     opacity: 0.11;
 
-    filter: blur(1px);
+    filter:
+        blur(1px);
 }
 
 
-/* 작은 파티클 */
-
 .snow.small {
+
     width: 2px;
+
     height: 2px;
 
     opacity: 0.22;
 
-    filter: blur(0.2px);
+    filter:
+        blur(0.2px);
 }
 
-
-/* 눈이 떨어지는 움직임 */
 
 @keyframes snow-fall {
 
     0% {
+
         transform:
             translate3d(0, -20px, 0)
             rotate(0deg);
     }
 
     25% {
+
         transform:
             translate3d(12px, 25vh, 0)
             rotate(90deg);
     }
 
     50% {
+
         transform:
             translate3d(-10px, 50vh, 0)
             rotate(180deg);
     }
 
     75% {
+
         transform:
             translate3d(15px, 75vh, 0)
             rotate(270deg);
     }
 
     100% {
+
         transform:
             translate3d(-5px, 110vh, 0)
             rotate(360deg);
@@ -167,11 +198,13 @@ body {
    ========================================================= */
 
 #page {
+
     position: relative;
 
     z-index: 1;
 
     width: 100%;
+
     min-height: 100vh;
 }
 
@@ -191,17 +224,17 @@ body {
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
-    background: var(--white);
+    background:
+        var(--white);
 
     transition:
         opacity 0.7s ease,
         visibility 0.7s ease;
 }
 
-
-/* 입장 화면이 사라질 때 */
 
 #intro-screen.hide {
 
@@ -213,55 +246,59 @@ body {
 }
 
 
-/* 입장 화면 안쪽 */
-
 .intro-inner {
 
-    width: min(88%, 600px);
+    width:
+        min(90%, 700px);
+
+    padding:
+        40px 20px;
 
     text-align: center;
-
-    padding: 40px 20px;
 }
 
 
 /* =========================================================
-   입장 화면 상단 작은 장식
+   입장 화면 장식
    ========================================================= */
 
 .intro-decoration {
 
     display: inline-block;
 
-    margin-bottom: 24px;
+    margin-bottom: 27px;
 
-    color: var(--accent);
+    color:
+        var(--accent);
 
-    font-size: 11px;
+    font-size: 12px;
 
-    letter-spacing: 3px;
+    letter-spacing: 5px;
 
     opacity: 0;
 
-    animation: intro-up 0.8s ease forwards;
+    animation:
+        intro-up 0.8s ease forwards;
 }
 
 
 /* =========================================================
-   For. 이름
+   입장 화면 제목
    ========================================================= */
 
 .intro-title {
 
-    color: var(--black);
+    color:
+        var(--black);
 
-    font-size: clamp(25px, 6vw, 48px);
+    font-size:
+        clamp(32px, 7vw, 56px);
 
-    line-height: 1.4;
+    line-height: 1.35;
 
     letter-spacing: 1px;
 
-    margin-bottom: 14px;
+    margin-bottom: 17px;
 
     opacity: 0;
 
@@ -270,23 +307,23 @@ body {
 }
 
 
-/* 이름 강조 */
-
 .intro-title .accent {
 
-    color: var(--accent);
+    color:
+        var(--accent);
 }
 
 
 /* =========================================================
-   By. LR. 리아
+   제작자
    ========================================================= */
 
 .intro-by {
 
-    color: var(--black);
+    color:
+        var(--black);
 
-    font-size: 10px;
+    font-size: 12px;
 
     letter-spacing: 1px;
 
@@ -300,18 +337,19 @@ body {
 
 
 /* =========================================================
-   ~을 닮은 이름님을 위해.
+   소개 문구
    ========================================================= */
 
 .intro-for {
 
-    color: var(--black);
+    color:
+        var(--black);
 
-    font-size: 9px;
+    font-size: 10px;
 
-    line-height: 1.8;
+    line-height: 2;
 
-    margin-bottom: 40px;
+    margin-bottom: 42px;
 
     opacity: 0;
 
@@ -321,28 +359,34 @@ body {
 
 
 /* =========================================================
-   이야기로 스며들기 버튼
+   입장 버튼
    ========================================================= */
 
 #enter-button {
 
     appearance: none;
 
-    border: 1px solid var(--accent);
+    border:
+        2px solid var(--accent);
 
     border-radius: 0;
 
-    background: var(--white);
+    background:
+        var(--white);
 
-    color: var(--accent);
+    color:
+        var(--accent);
 
-    padding: 15px 22px;
+    padding:
+        16px 28px;
 
-    font-family: "Silkscreen", monospace;
+    font-family:
+        "Silkscreen",
+        monospace;
 
-    font-size: 10px;
+    font-size: 11px;
 
-    letter-spacing: 1px;
+    letter-spacing: 0;
 
     cursor: pointer;
 
@@ -359,36 +403,31 @@ body {
 }
 
 
-/* 마우스를 올렸을 때 */
-
 #enter-button:hover {
 
-    background: var(--accent);
+    background:
+        var(--accent);
 
-    color: var(--white);
+    color:
+        var(--white);
 
     box-shadow:
-        5px 5px 0 var(--accent-light);
+        6px 6px 0 var(--accent-light);
 
     transform:
         translate(-2px, -2px);
 }
 
 
-/* 클릭할 때 */
-
 #enter-button:active {
 
     transform:
         translate(0, 0);
 
-    box-shadow: none;
+    box-shadow:
+        none;
 }
 
-
-/* =========================================================
-   입장 화면 등장 애니메이션
-   ========================================================= */
 
 @keyframes intro-up {
 
@@ -411,109 +450,6 @@ body {
 
 
 /* =========================================================
-   메인 콘텐츠
-   처음에는 숨겨져 있다가 로딩 이후 나타남
-   ========================================================= */
-
-#main-content {
-
-    width: 100%;
-
-    min-height: 100vh;
-
-    padding:
-        70px 20px 50px;
-
-    opacity: 0;
-
-    visibility: hidden;
-
-    transition:
-        opacity 0.8s ease,
-        visibility 0.8s ease;
-}
-
-
-/* 메인 콘텐츠 표시 */
-
-#main-content.show {
-
-    opacity: 1;
-
-    visibility: visible;
-}
-
-
-/* =========================================================
-   메인 콘텐츠 최대 너비
-   ========================================================= */
-
-.content-wrapper {
-
-    width: 100%;
-
-    max-width: var(--content-width);
-
-    margin:
-        0 auto;
-}
-
-
-/* =========================================================
-   상단 페이지 헤더
-   ========================================================= */
-
-.page-header {
-
-    width: 100%;
-
-    margin-bottom: 45px;
-
-    text-align: center;
-}
-
-
-/* 헤더의 작은 장식 */
-
-.page-header-decoration {
-
-    display: block;
-
-    color: var(--accent);
-
-    font-size: 9px;
-
-    letter-spacing: 4px;
-
-    margin-bottom: 14px;
-}
-
-
-/* 페이지 제목 */
-
-.page-title {
-
-    font-size: clamp(20px, 5vw, 34px);
-
-    line-height: 1.5;
-
-    margin-bottom: 10px;
-}
-
-
-/* 페이지 설명 */
-
-.page-subtitle {
-
-    font-size: 8px;
-
-    line-height: 1.8;
-
-    opacity: 0.6;
-}
-
-
-/* =========================================================
    로딩 화면
    ========================================================= */
 
@@ -528,9 +464,11 @@ body {
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
-    background: var(--white);
+    background:
+        var(--white);
 
     opacity: 0;
 
@@ -544,8 +482,6 @@ body {
 }
 
 
-/* 로딩 화면 활성화 */
-
 #loading-screen.show {
 
     opacity: 1;
@@ -554,15 +490,14 @@ body {
 }
 
 
-/* 로딩 텍스트 */
-
 .loading-text {
 
-    color: var(--accent);
+    color:
+        var(--accent);
 
-    font-size: 11px;
+    font-size: 14px;
 
-    letter-spacing: 2px;
+    letter-spacing: 3px;
 
     animation:
         loading-blink 1s steps(2, end) infinite;
@@ -586,1212 +521,45 @@ body {
 
 
 /* =========================================================
-   카드 영역
-   ========================================================= */
-
-.cards-container {
-
-    width: 100%;
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(2, minmax(0, 1fr));
-
-    gap: 30px;
-}
-
-
-/* =========================================================
-   카드 기본 틀
-   ========================================================= */
-
-.work-card {
-
-    position: relative;
-
-    width: 100%;
-
-    aspect-ratio: 0.92 / 1;
-
-    background: var(--white);
-
-    border: 5px solid var(--accent);
-
-    border-radius: 0;
-
-    overflow: hidden;
-
-    display: flex;
-
-    flex-direction: column;
-
-    opacity: 0;
-
-    transform:
-        translateY(20px);
-
-    transition:
-        opacity 0.7s ease,
-        transform 0.7s ease;
-}
-
-
-/* 카드 등장 */
-
-.work-card.visible {
-
-    opacity: 1;
-
-    transform:
-        translateY(0);
-}
-
-
-/* =========================================================
-   카드 배너
-   비율 2 : 3 중 위쪽 2
-   ========================================================= */
-
-.card-banner {
-
-    position: relative;
-
-    width: 100%;
-
-    flex: 2;
-
-    min-height: 0;
-
-    overflow: hidden;
-
-    background: var(--accent-faint);
-
-    border-bottom: 2px solid var(--accent);
-}
-
-
-/* 배너 이미지 */
-
-.card-banner img {
-
-    display: block;
-
-    width: 100%;
-
-    height: 100%;
-
-    object-fit: cover;
-}
-
-
-/* =========================================================
-   카드 본문
-   비율 2 : 3 중 아래쪽 3
-   ========================================================= */
-
-.card-body {
-
-    position: relative;
-
-    width: 100%;
-
-    flex: 3;
-
-    min-height: 0;
-
-    padding: 22px;
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: space-between;
-}
-
-
-/* =========================================================
-   카드 본문 상단
-   ========================================================= */
-
-.card-info {
-
-    width: 100%;
-}
-
-
-/* 카드 제목 */
-
-.card-title {
-
-    font-size: 20px;
-
-    line-height: 1.7;
-
-    margin-bottom: 10px;
-
-    word-break: keep-all;
-}
-
-
-/* 작업일자 */
-
-.card-date {
-
-    font-size: 15px;
-
-    line-height: 1.7;
-
-    opacity: 0.55;
-}
-
-
-/* =========================================================
-   카드 이동 버튼
-   ========================================================= */
-
-.card-link {
-
-    display: inline-flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    align-self: flex-start;
-
-    min-height: 34px;
-
-    padding: 8px 12px;
-
-    border: 3px solid var(--accent);
-
-    border-radius: 0;
-
-    background: var(--white);
-
-    color: var(--accent);
-
-    text-decoration: none;
-
-    font-family: "Silkscreen", monospace;
-
-    font-size: 12px;
-
-    line-height: 1.4;
-
-    transition:
-        background 0.2s ease,
-        color 0.2s ease,
-        transform 0.2s ease;
-}
-
-
-.card-link:hover {
-
-    background: var(--accent);
-
-    color: var(--white);
-
-    transform:
-        translate(-2px, -2px);
-}
-
-
-/* =========================================================
-   맨 아래 출처 영역
-   ========================================================= */
-
-.footer {
-
-    width: 100%;
-
-    margin-top: 60px;
-
-    padding-top: 20px;
-
-    border-top: 1px solid var(--accent);
-
-    font-size: 8px;
-
-    line-height: 2;
-
-    opacity: 0.65;
-}
-
-
-/* =========================================================
-   모바일
-   ========================================================= */
-
-@media (max-width: 600px) {
-
-    #main-content {
-
-        padding:
-            55px 16px 35px;
-    }
-
-
-    .intro-inner {
-
-        width: 92%;
-
-        padding:
-            30px 10px;
-    }
-
-
-    .cards-container {
-
-        grid-template-columns:
-            1fr;
-
-        gap: 25px;
-    }
-
-
-    .work-card {
-
-        aspect-ratio:
-            0.95 / 1;
-    }
-
-
-    .card-body {
-
-        padding: 16px;
-    }
-
-
-    .page-header {
-
-        margin-bottom: 35px;
-    }
-}
-
-
-/* =========================================================
-   아주 작은 화면
-   ========================================================= */
-
-@media (max-width: 360px) {
-
-    .intro-title {
-
-        font-size: 23px;
-    }
-
-
-    .intro-by {
-
-        font-size: 9px;
-    }
-
-
-    .intro-for {
-
-        font-size: 8px;
-    }
-
-
-    #enter-button {
-
-        font-size: 9px;
-
-        padding:
-            13px 17px;
-    }
-
-
-    .card-title {
-
-        font-size: 11px;
-    }
-}
-
-</style>
-</head>
-
-<body>
-
-
-<!-- =======================================================
-     배경 파티클
-     ======================================================= -->
-
-<div id="snow-background">
-
-    <span class="snow small"
-          style="left: 4%; animation-duration: 13s; animation-delay: -4s;"></span>
-
-    <span class="snow"
-          style="left: 11%; animation-duration: 17s; animation-delay: -10s;"></span>
-
-    <span class="snow big"
-          style="left: 18%; animation-duration: 21s; animation-delay: -7s;"></span>
-
-    <span class="snow small"
-          style="left: 26%; animation-duration: 15s; animation-delay: -13s;"></span>
-
-    <span class="snow"
-          style="left: 33%; animation-duration: 19s; animation-delay: -3s;"></span>
-
-    <span class="snow small"
-          style="left: 41%; animation-duration: 14s; animation-delay: -9s;"></span>
-
-    <span class="snow big"
-          style="left: 48%; animation-duration: 23s; animation-delay: -17s;"></span>
-
-    <span class="snow"
-          style="left: 56%; animation-duration: 18s; animation-delay: -5s;"></span>
-
-    <span class="snow small"
-          style="left: 63%; animation-duration: 16s; animation-delay: -11s;"></span>
-
-    <span class="snow big"
-          style="left: 70%; animation-duration: 22s; animation-delay: -15s;"></span>
-
-    <span class="snow small"
-          style="left: 77%; animation-duration: 14s; animation-delay: -6s;"></span>
-
-    <span class="snow"
-          style="left: 84%; animation-duration: 20s; animation-delay: -12s;"></span>
-
-    <span class="snow big"
-          style="left: 91%; animation-duration: 24s; animation-delay: -19s;"></span>
-
-    <span class="snow small"
-          style="left: 97%; animation-duration: 17s; animation-delay: -2s;"></span>
-
-</div>
-
-
-<!-- =======================================================
-     전체 페이지
-     ======================================================= -->
-
-<div id="page">
-
-
-    <!-- ===================================================
-         입장 화면
-         =================================================== -->
-
-    <section id="intro-screen">
-
-        <div class="intro-inner">
-
-            <div class="intro-decoration">
-                · · ·
-            </div>
-
-
-            <!-- 수정: 이름 -->
-            <h1 class="intro-title">
-                &lt;For. <span class="accent">우주</span>&gt;
-            </h1>
-
-
-            <!-- 수정: 제작자 -->
-            <p class="intro-by">
-                By. LR. 리아
-            </p>
-
-
-            <!-- 수정: 문구 -->
-            <p class="intro-for">
-                스스로 빛나는 태양을 닮은 우주님을 위해.
-            </p>
-
-
-            <button id="enter-button">
-                &gt;이야기로 스며들기&lt;
-            </button>
-
-        </div>
-
-    </section>
-
-
-    <!-- ===================================================
-         로딩 화면
-         =================================================== -->
-
-    <section id="loading-screen">
-
-        <div class="loading-text">
-            LOADING...
-        </div>
-
-    </section>
-
-
-    <!-- ===================================================
-         메인 콘텐츠
-         =================================================== -->
-
-    <main id="main-content">
-
-        <div class="content-wrapper">
-
-
-            <!-- 페이지 상단 -->
-
-            <header class="page-header">
-
-                <span class="page-header-decoration">
-                    · · · · ·
-                </span>
-
-                <h2 class="page-title">
-                    For. 우주
-                </h2>
-
-                <p class="page-subtitle">
-                    이야기가 머무른 자리.
-                </p>
-
-            </header>
-
-
-            <!-- =================================================
-                 여기부터 2/4에서 카드가 이어질 예정
-                 ================================================= -->
-
-
-            <!-- =================================================
-                 작업물 카드
-                 ================================================= -->
-
-            <section class="cards-container">
-
-
-                <!-- =================================================
-                     카드 1
-                     수정할 것:
-                     1. a.png → 배너 이미지 파일명
-                     2. 제목
-                     3. 작업일자
-                     4. 링크
-                     ================================================= -->
-
-                <article class="work-card">
-
-                    <div class="card-banner">
-
-                        <img
-                            src="a.png"
-                            alt="작업물 배너"
-                        >
-
-                    </div>
-
-
-                    <div class="card-body">
-
-                        <div class="card-info">
-
-                            <h3 class="card-title">
-                                <좀비고 안으로 - 우주>
-                            </h3>
-
-                            <p class="card-date">
-                                작업일자: 2025. 09
-                            </p>
-
-                        </div>
-
-
-                        <a
-                            class="card-link"
-                            href="https://share.novela.so/file/68b6ac25e683fcde1db6dc18"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            &gt;"두 사람의 시작 속으로"
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-
-                <!-- =================================================
-                     카드 2
-                     ================================================= -->
-
-                <article class="work-card">
-
-                    <div class="card-banner">
-
-                        <img
-                            src="b.png"
-                            alt="작업물 배너"
-                        >
-
-                    </div>
-
-
-                    <div class="card-body">
-
-                        <div class="card-info">
-
-                            <h3 class="card-title">
-                                <마법고 - 메신저피시>
-                            </h3>
-
-                            <p class="card-date">
-                                작업일자: 2025. 09
-                            </p>
-
-                        </div>
-
-
-                        <a
-                            class="card-link"
-                            href="https://share.novela.so/file/68c24ab45813ce1d99258cef"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            &gt;"모든 일이 끝나면 좀비고등학교로 다시..."
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-
-                <!-- =================================================
-                     카드 3
-                     ================================================= -->
-
-                <article class="work-card">
-
-                    <div class="card-banner">
-
-                        <img
-                            src="c.png"
-                            alt="작업물 배너"
-                        >
-
-                    </div>
-
-
-                    <div class="card-body">
-
-                        <div class="card-info">
-
-                            <h3 class="card-title">
-                                <악마라면 장난을 쳐야 하는 법이지!>
-                            </h3>
-
-                            <p class="card-date">
-                                작업일자: 2025. 11
-                            </p>
-
-                        </div>
-
-
-                        <a
-                            class="card-link"
-                            href="https://share.novela.so/file/6916d02db68fdfd39c09de7b"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            &gt;"붉은 달이 뜬 그날."
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-
-                <!-- =================================================
-                     추가 카드 예시
-                     ================================================= -->
-
-                <article class="work-card">
-
-                    <div class="card-banner">
-
-                        <img
-                            src="d.png"
-                            alt="작업물 배너"
-                        >
-
-                    </div>
-
-
-                    <div class="card-body">
-
-                        <div class="card-info">
-
-                            <h3 class="card-title">
-                                <소악마 외전>
-                            </h3>
-
-                            <p class="card-date">
-                                작업일자: 2025. 12
-                            </p>
-
-                        </div>
-
-
-                        <a
-                            class="card-link"
-                            href="https://share.novela.so/file/693b4c939161c5b2be8c52ef"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            &gt;"언제까지나 가족일 거라는 확신"
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-
-               <!-- =================================================
-                     추가 카드 예시
-                     ================================================= -->
-
-                <article class="work-card">
-
-                    <div class="card-banner">
-
-                        <img
-                            src="f.png"
-                            alt="작업물 배너"
-                        >
-
-                    </div>
-
-
-                    <div class="card-body">
-
-                        <div class="card-info">
-
-                            <h3 class="card-title">
-                                <설산>
-                            </h3>
-
-                            <p class="card-date">
-                                작업일자: 2025.12
-                            </p>
-
-                        </div>
-
-
-                        <a
-                            class="card-link"
-                            href="https://share.novela.so/file/6947b3e315e79501f2e0e65b"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            &gt;"난 잘 못 지내고 있어"
-                        </a>
-
-                    </div>
-
-                </article>
-               
-
-
-               <!-- =================================================
-                     추가 카드 예시
-                     ================================================= -->
-
-                <article class="work-card">
-
-                    <div class="card-banner">
-
-                        <img
-                            src="e.png"
-                            alt="작업물 배너"
-                        >
-
-                    </div>
-
-
-                    <div class="card-body">
-
-                        <div class="card-info">
-
-                            <h3 class="card-title">
-                                <"Selfish">
-                            </h3>
-
-                            <p class="card-date">
-                                작업일자: 2026. 01
-                            </p>
-
-                        </div>
-
-
-                        <a
-                            class="card-link"
-                            href="https://share.novela.so/file/695b8717cb668a4650684489"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            &gt;"지독하게 ■■■인"
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-            </section>
-
-
-            <!-- =================================================
-                 작업물 카드 영역 끝
-                 ================================================= -->
-
-
-            <!-- =================================================
-                 페이지 하단 출처 표기
-                 
-                 3/4에서 애니메이션과 기능을 이어서 넣고,
-                 4/4에서 이 부분을 완성할 예정.
-                 ================================================= -->
-
-
-            <!-- =================================================
-                 페이지 하단 출처 표기
-                 ================================================= -->
-
-            <footer class="footer">
-
-                <div>
-                    제작 | LR. 리아
-                </div>
-
-                <div>
-                    For | 우주
-                </div>
-
-            </footer>
-
-
-        </div>
-
-    </main>
-
-
-</div>
-
-
-<!-- =========================================================
-     JavaScript
-     ========================================================= -->
-
-<script>
-
-/*
-=============================================================
-  입장 버튼
-=============================================================
-*/
-
-const enterButton =
-    document.getElementById("enter-button");
-
-const introScreen =
-    document.getElementById("intro-screen");
-
-const loadingScreen =
-    document.getElementById("loading-screen");
-
-const mainContent =
-    document.getElementById("main-content");
-
-const workCards =
-    document.querySelectorAll(".work-card");
-
-
-/*
-=============================================================
-  이야기로 스며들기
-=============================================================
-
-  버튼을 누르면
-
-  1. 입장 화면이 사라짐
-  2. 로딩 화면 등장
-  3. 정확히 1.5초 동안 유지
-  4. 로딩 화면이 사라짐
-  5. 작업물 페이지 등장
-  6. 카드가 순서대로 나타남
-
-=============================================================
-*/
-
-enterButton.addEventListener("click", function () {
-
-
-    /* ---------------------------------------------
-       1. 입장 화면 숨기기
-       --------------------------------------------- */
-
-    introScreen.classList.add("hide");
-
-
-    /* ---------------------------------------------
-       2. 로딩 화면 표시
-       --------------------------------------------- */
-
-    loadingScreen.classList.add("show");
-
-
-    /* ---------------------------------------------
-       3. 1.5초 대기
-       --------------------------------------------- */
-
-    setTimeout(function () {
-
-
-        /* -----------------------------------------
-           4. 로딩 화면 숨기기
-           ----------------------------------------- */
-
-        loadingScreen.classList.remove("show");
-
-
-        /* -----------------------------------------
-           5. 메인 페이지 표시
-           ----------------------------------------- */
-
-        mainContent.classList.add("show");
-
-
-        /* -----------------------------------------
-           6. 카드 순차 등장
-           ----------------------------------------- */
-
-        workCards.forEach(function(card, index) {
-
-            setTimeout(function() {
-
-                card.classList.add("visible");
-
-            }, 150 + (index * 130));
-
-        });
-
-
-    }, 1500);
-
-});
-
-
-/*
-=============================================================
-  이미지가 존재하지 않을 경우
-=============================================================
-
-  아직 이미지를 넣지 않았거나 파일명이 잘못됐을 때
-  깨진 이미지 아이콘 대신 깔끔한 파란 영역으로
-  보이도록 처리함.
-
-  나중에 실제 a.png, b.png 등을 넣으면
-  자동으로 정상 이미지가 표시됨.
-
-=============================================================
-*/
-
-const bannerImages =
-    document.querySelectorAll(".card-banner img");
-
-
-bannerImages.forEach(function(image) {
-
-    image.addEventListener("error", function() {
-
-        image.style.display = "none";
-
-        image.parentElement.classList.add(
-            "image-missing"
-        );
-
-    });
-
-});
-
-
-/*
-=============================================================
-  카드 이미지 로딩 완료 효과
-=============================================================
-*/
-
-bannerImages.forEach(function(image) {
-
-    image.addEventListener("load", function() {
-
-        image.classList.add("image-loaded");
-
-    });
-
-});
-
-
-/*
-=============================================================
-  마우스가 카드 위에 올라갔을 때
-=============================================================
-
-  카드 자체는 라운드 없이 유지하면서
-  아주 미세하게 떠오르는 느낌만 줌.
-
-=============================================================
-*/
-
-workCards.forEach(function(card) {
-
-    card.addEventListener("mouseenter", function() {
-
-        card.style.transform =
-            "translateY(-4px)";
-
-    });
-
-
-    card.addEventListener("mouseleave", function() {
-
-        card.style.transform =
-            "translateY(0)";
-
-    });
-
-});
-
-
-/*
-=============================================================
-  키보드 접근성
-=============================================================
-*/
-
-enterButton.addEventListener("keydown", function(event) {
-
-    if (
-        event.key === "Enter" ||
-        event.key === " "
-    ) {
-
-        event.preventDefault();
-
-        enterButton.click();
-
-    }
-
-});
-
-
-</script>
-
-
-<style>
-
-/* =========================================================
-   이미지가 아직 없을 때의 표시
-   ========================================================= */
-
-.image-missing {
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    background:
-        var(--accent-faint);
-}
-
-
-/* 이미지가 없을 때 작은 표시 */
-
-.image-missing::after {
-
-    content: "[ IMAGE ]";
-
-    color: var(--accent);
-
-    font-family: "Silkscreen", monospace;
-
-    font-size: 8px;
-
-    letter-spacing: 2px;
-
-    opacity: 0.45;
-}
-
-
-/* =========================================================
-   이미지 로딩 후
-   ========================================================= */
-
-.card-banner img {
-
-    opacity: 0;
-
-    transition:
-        opacity 0.5s ease;
-}
-
-
-.card-banner img.image-loaded {
-
-    opacity: 1;
-}
-
-
-/* =========================================================
-   카드에 마우스를 올렸을 때
-   ========================================================= */
-
-.work-card {
-
-    transition:
-        opacity 0.7s ease,
-        transform 0.25s ease,
-        box-shadow 0.25s ease;
-}
-
-
-.work-card:hover {
-
-    box-shadow:
-        6px 6px 0 var(--accent-light);
-}
-
-
-/* =========================================================
-   링크 클릭/포커스
-   ========================================================= */
-
-.card-link:focus-visible,
-#enter-button:focus-visible {
-
-    outline:
-        2px solid var(--accent);
-
-    outline-offset:
-        3px;
-}
-
-
-/* =========================================================
-   선택 영역
-   ========================================================= */
-
-::selection {
-
-    background:
-        var(--accent);
-
-    color:
-        var(--white);
-}
-
-
-/* =========================================================
-   모바일 카드 터치 효과
-   ========================================================= */
-
-@media (hover: none) {
-
-    .work-card:hover {
-<style>
-
-/* =========================================================
-   최종 디자인 보정
-   ========================================================= */
-
-:root {
-
-    --accent: #4f91ee;
-
-    --accent-light: rgba(79, 145, 238, 0.18);
-
-    --accent-faint: rgba(79, 145, 238, 0.08);
-
-    --black: #111827;
-
-    --white: #ffffff;
-
-    --content-width: 1000px;
-}
-
-
-/* =========================================================
-   이미지가 없을 때
-   ========================================================= */
-
-.image-missing {
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    background:
-        var(--accent-faint);
-}
-
-
-.image-missing::after {
-
-    content: "[ IMAGE ]";
-
-    color: var(--accent);
-
-    font-family: "Silkscreen", monospace;
-
-    font-size: 10px;
-
-    letter-spacing: 2px;
-
-    opacity: 0.45;
-}
-
-
-/* =========================================================
-   카드 이미지
-   ========================================================= */
-
-.card-banner img {
-
-    opacity: 0;
-
-    transition:
-        opacity 0.5s ease;
-}
-
-
-.card-banner img.image-loaded {
-
-    opacity: 1;
-}
-
-
-/* =========================================================
-   전체 메인 영역
+   메인 콘텐츠
    ========================================================= */
 
 #main-content {
 
+    width: 100%;
+
+    min-height: 100vh;
+
     padding:
         75px 24px 60px;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition:
+        opacity 0.8s ease,
+        visibility 0.8s ease;
+}
+
+
+#main-content.show {
+
+    opacity: 1;
+
+    visibility: visible;
+}
+
+
+.content-wrapper {
+
+    width: 100%;
+
+    max-width:
+        var(--content-width);
+
+    margin:
+        0 auto;
 }
 
 
@@ -1801,11 +569,20 @@ enterButton.addEventListener("keydown", function(event) {
 
 .page-header {
 
+    width: 100%;
+
     margin-bottom: 45px;
+
+    text-align: center;
 }
 
 
 .page-header-decoration {
+
+    display: block;
+
+    color:
+        var(--accent);
 
     font-size: 11px;
 
@@ -1839,10 +616,12 @@ enterButton.addEventListener("keydown", function(event) {
 
 
 /* =========================================================
-   카드 배열
+   카드 영역
    ========================================================= */
 
 .cards-container {
+
+    width: 100%;
 
     display: grid;
 
@@ -1850,8 +629,6 @@ enterButton.addEventListener("keydown", function(event) {
         repeat(3, minmax(0, 1fr));
 
     gap: 18px;
-
-    width: 100%;
 }
 
 
@@ -1860,6 +637,8 @@ enterButton.addEventListener("keydown", function(event) {
    ========================================================= */
 
 .work-card {
+
+    position: relative;
 
     width: 100%;
 
@@ -1892,14 +671,19 @@ enterButton.addEventListener("keydown", function(event) {
 }
 
 
-/* 카드 등장 */
-
 .work-card.visible {
 
     opacity: 1;
 
     transform:
         translateY(0);
+}
+
+
+.work-card:hover {
+
+    box-shadow:
+        7px 7px 0 var(--accent-light);
 }
 
 
@@ -1936,6 +720,54 @@ enterButton.addEventListener("keydown", function(event) {
     height: 100%;
 
     object-fit: cover;
+
+    opacity: 0;
+
+    transition:
+        opacity 0.5s ease;
+}
+
+
+.card-banner img.image-loaded {
+
+    opacity: 1;
+}
+
+
+/* =========================================================
+   이미지가 없을 때
+   ========================================================= */
+
+.image-missing {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        var(--accent-faint);
+}
+
+
+.image-missing::after {
+
+    content:
+        "[ IMAGE ]";
+
+    color:
+        var(--accent);
+
+    font-family:
+        "Silkscreen",
+        monospace;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    opacity: 0.45;
 }
 
 
@@ -2058,102 +890,49 @@ enterButton.addEventListener("keydown", function(event) {
 
 
 /* =========================================================
-   카드 마우스 효과
+   하단 출처
    ========================================================= */
 
-.work-card:hover {
+.footer {
 
-    box-shadow:
-        7px 7px 0 var(--accent-light);
-}
+    width: 100%;
 
+    margin-top: 70px;
 
-/* =========================================================
-   입장 화면
-   ========================================================= */
+    padding-top: 22px;
 
-.intro-inner {
-
-    width:
-        min(90%, 700px);
-
-    padding:
-        40px 20px;
-}
-
-
-.intro-decoration {
-
-    font-size: 12px;
-
-    letter-spacing: 5px;
-
-    margin-bottom: 27px;
-}
-
-
-.intro-title {
-
-    font-size:
-        clamp(32px, 7vw, 56px);
-
-    line-height: 1.35;
-
-    letter-spacing: 1px;
-
-    margin-bottom: 17px;
-}
-
-
-.intro-by {
-
-    font-size: 12px;
-
-    margin-bottom: 28px;
-}
-
-
-.intro-for {
+    border-top:
+        2px solid var(--accent);
 
     font-size: 10px;
 
-    line-height: 2;
+    line-height: 2.2;
 
-    margin-bottom: 42px;
+    text-align: center;
+
+    opacity: 0.7;
 }
 
 
 /* =========================================================
-   입장 버튼
+   선택 영역
    ========================================================= */
 
-#enter-button {
+::selection {
 
-    border:
-        2px solid var(--accent);
+    background:
+        var(--accent);
 
-    border-radius: 0;
-
-    padding:
-        16px 28px;
-
-    font-size: 11px;
-
-    letter-spacing: 0;
+    color:
+        var(--white);
 }
 
 
-#enter-button:hover {
+/* =========================================================
+   포커스
+   ========================================================= */
 
-    box-shadow:
-        6px 6px 0 var(--accent-light);
-
-    transform:
-        translate(-2px, -2px);
-}
-
-
-
+.card-link:focus-visible,
 #enter-button:focus-visible {
 
     outline:
@@ -2161,6 +940,29 @@ enterButton.addEventListener("keydown", function(event) {
 
     outline-offset:
         4px;
+}
+
+
+/* =========================================================
+   태블릿
+   ========================================================= */
+
+@media (min-width: 701px) and (max-width: 900px) {
+
+    .cards-container {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 20px;
+    }
+
+
+    .work-card {
+
+        aspect-ratio:
+            0.86 / 1;
+    }
 }
 
 
@@ -2227,778 +1029,34 @@ enterButton.addEventListener("keydown", function(event) {
 
 
 /* =========================================================
-   태블릿
-   ========================================================= */
-
-@media (min-width: 701px) and (max-width: 900px) {
-
-    .cards-container {
-
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
-
-        gap: 20px;
-    }
-
-
-    .work-card {
-
-<style>
-
-/* =========================================================
-   최종 디자인 설정
-   ========================================================= */
-
-:root {
-
-    /* ★ 메인 포인트 색상 */
-    --accent: #efa1c5;
-
-    /* ★ 포인트 색상의 연한 버전 */
-    --accent-light: rgba(239, 161, 197, 0.20);
-
-    --accent-faint: rgba(239, 161, 197, 0.08);
-
-    --black: #111111;
-
-    --white: #ffffff;
-
-    /* ★ 전체 콘텐츠 너비 */
-    --content-width: 1000px;
-}
-
-
-/* =========================================================
-   전체 메인 콘텐츠
-   ========================================================= */
-
-#main-content {
-
-    width: 100%;
-
-    min-height: 100vh;
-
-    padding:
-        75px 24px 60px;
-}
-
-
-/* =========================================================
-   콘텐츠 최대 너비
-   ========================================================= */
-
-.content-wrapper {
-
-    width: 100%;
-
-    max-width: var(--content-width);
-
-    margin:
-        0 auto;
-}
-
-
-/* =========================================================
-   페이지 상단
-   ========================================================= */
-
-.page-header {
-
-    width: 100%;
-
-    margin-bottom: 45px;
-
-    text-align: center;
-}
-
-
-.page-header-decoration {
-
-    display: block;
-
-    color: var(--accent);
-
-    font-size: 11px;
-
-    letter-spacing: 5px;
-
-    margin-bottom: 17px;
-}
-
-
-.page-title {
-
-    color: var(--black);
-
-    font-size:
-        clamp(27px, 5vw, 42px);
-
-    line-height: 1.4;
-
-    margin-bottom: 13px;
-
-    letter-spacing: 1px;
-}
-
-
-.page-subtitle {
-
-    color: var(--black);
-
-    font-size: 10px;
-
-    line-height: 1.8;
-
-    opacity: 0.65;
-}
-
-
-/* =========================================================
-   카드 배열
-
-   PC : 3개
-   태블릿 : 2개
-   모바일 : 1개
-   ========================================================= */
-
-.cards-container {
-
-    width: 100%;
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, minmax(0, 1fr));
-
-    gap: 20px;
-}
-
-
-/* =========================================================
-   카드
-   ========================================================= */
-
-.work-card {
-
-    position: relative;
-
-    width: 100%;
-
-    /*
-       정사각형에 가까운 세로 직사각형
-    */
-
-    aspect-ratio:
-        0.82 / 1;
-
-    background:
-        var(--white);
-
-    /*
-       ★ 카드 테두리
-    */
-
-    border:
-        3px solid var(--accent);
-
-    border-radius: 0;
-
-    overflow: hidden;
-
-    display: flex;
-
-    flex-direction: column;
-
-    opacity: 0;
-
-    transform:
-        translateY(20px);
-
-    transition:
-        opacity 0.7s ease,
-        transform 0.25s ease,
-        box-shadow 0.25s ease;
-}
-
-
-/* 카드 등장 */
-
-.work-card.visible {
-
-    opacity: 1;
-
-    transform:
-        translateY(0);
-}
-
-
-/* =========================================================
-   카드 배너
-
-   전체 카드의 위쪽 2
-   ========================================================= */
-
-.card-banner {
-
-    position: relative;
-
-    width: 100%;
-
-    flex: 2;
-
-    min-height: 0;
-
-    overflow: hidden;
-
-    background:
-        var(--accent-faint);
-
-    border-bottom:
-        3px solid var(--accent);
-}
-
-
-/* 배너 이미지 */
-
-.card-banner img {
-
-    display: block;
-
-    width: 100%;
-
-    height: 100%;
-
-    object-fit: cover;
-
-    opacity: 1;
-
-    transition:
-        opacity 0.5s ease;
-}
-
-
-/* 이미지가 로드됐을 때 */
-
-.card-banner img.image-loaded {
-
-    opacity: 1;
-}
-
-
-/* 이미지가 없을 때 */
-
-.image-missing {
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    background:
-        var(--accent-faint);
-}
-
-
-.image-missing::after {
-
-    content:
-        "[ IMAGE ]";
-
-    color:
-        var(--accent);
-
-    font-family:
-        "Silkscreen",
-        monospace;
-
-    font-size: 10px;
-
-    letter-spacing: 2px;
-
-    opacity: 0.45;
-}
-
-
-/* =========================================================
-   카드 본문
-
-   전체 카드의 아래쪽 3
-   ========================================================= */
-
-.card-body {
-
-    position: relative;
-
-    width: 100%;
-
-    flex: 3;
-
-    min-height: 0;
-
-    padding: 20px;
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: space-between;
-}
-
-
-/* =========================================================
-   카드 제목
-   ========================================================= */
-
-.card-title {
-
-    color:
-        var(--black);
-
-    font-size:
-        15px;
-
-    line-height:
-        1.7;
-
-    margin-bottom:
-        10px;
-
-    font-weight:
-        700;
-
-    word-break:
-        keep-all;
-}
-
-
-/* =========================================================
-   작업일자
-   ========================================================= */
-
-.card-date {
-
-    color:
-        var(--black);
-
-    font-size:
-        10px;
-
-    line-height:
-        1.7;
-
-    opacity:
-        0.58;
-}
-
-
-/* =========================================================
-   카드 이동 버튼
-   ========================================================= */
-
-.card-link {
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        center;
-
-    width:
-        100%;
-
-    min-height:
-        42px;
-
-    padding:
-        9px 10px;
-
-    border:
-        3px solid var(--accent);
-
-    border-radius:
-        0;
-
-    background:
-        var(--white);
-
-    color:
-        var(--accent);
-
-    text-decoration:
-        none;
-
-    font-family:
-        "Silkscreen",
-        monospace;
-
-    font-size:
-        10px;
-
-    line-height:
-        1.5;
-
-    letter-spacing:
-        0;
-
-    transition:
-        background 0.2s ease,
-        color 0.2s ease,
-        transform 0.2s ease;
-}
-
-
-.card-link:hover {
-
-    background:
-        var(--accent);
-
-    color:
-        var(--white);
-
-    transform:
-        translate(-2px, -2px);
-}
-
-
-/* =========================================================
-   카드 hover
-   ========================================================= */
-
-.work-card:hover {
-
-    box-shadow:
-        7px 7px 0 var(--accent-light);
-}
-
-
-/* =========================================================
-   입장 화면
-   ========================================================= */
-
-.intro-inner {
-
-    width:
-        min(90%, 700px);
-
-    padding:
-        40px 20px;
-}
-
-
-.intro-decoration {
-
-    color:
-        var(--accent);
-
-    font-size:
-        12px;
-
-    letter-spacing:
-        5px;
-
-    margin-bottom:
-        27px;
-}
-
-
-.intro-title {
-
-    font-size:
-        clamp(32px, 7vw, 56px);
-
-    line-height:
-        1.35;
-
-    letter-spacing:
-        1px;
-
-    margin-bottom:
-        17px;
-}
-
-
-.intro-by {
-
-    font-size:
-        12px;
-
-    margin-bottom:
-        28px;
-}
-
-
-.intro-for {
-
-    font-size:
-        10px;
-
-    line-height:
-        2;
-
-    margin-bottom:
-        42px;
-}
-
-
-/* =========================================================
-   입장 버튼
-   ========================================================= */
-
-#enter-button {
-
-    border:
-        3px solid var(--accent);
-
-    border-radius:
-        0;
-
-    padding:
-        16px 28px;
-
-    font-size:
-        11px;
-
-    letter-spacing:
-        0;
-}
-
-
-#enter-button:hover {
-
-    background:
-        var(--accent);
-
-    color:
-        var(--white);
-
-    box-shadow:
-        6px 6px 0 var(--accent-light);
-
-    transform:
-        translate(-2px, -2px);
-}
-
-
-/* =========================================================
-   로딩
-   ========================================================= */
-
-.loading-text {
-
-    color:
-        var(--accent);
-
-    font-size:
-        14px;
-
-    letter-spacing:
-        3px;
-}
-
-
-/* =========================================================
-   하단 출처
-   ========================================================= */
-
-.footer {
-
-    width:
-        100%;
-
-    margin-top:
-        70px;
-
-    padding-top:
-        22px;
-
-    border-top:
-        2px solid var(--accent);
-
-    color:
-        var(--black);
-
-    font-size:
-        10px;
-
-    line-height:
-        2.2;
-
-    text-align:
-        center;
-
-    opacity:
-        0.7;
-}
-
-
-/* =========================================================
-   선택 영역
-   ========================================================= */
-
-::selection {
-
-    background:
-        var(--accent);
-
-    color:
-        var(--white);
-}
-
-
-/* =========================================================
-   키보드 포커스
-   ========================================================= */
-
-.card-link:focus-visible,
-#enter-button:focus-visible {
-
-    outline:
-        2px solid var(--accent);
-
-    outline-offset:
-        4px;
-}
-
-
-/* =========================================================
-   태블릿
-
-   701px ~ 900px
-   카드 2개
-   ========================================================= */
-
-@media (min-width: 701px) and (max-width: 900px) {
-
-    .cards-container {
-
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
-
-        gap:
-            22px;
-    }
-
-
-    .work-card {
-
-        aspect-ratio:
-            0.86 / 1;
-    }
-
-}
-
-
-/* =========================================================
-   모바일
-
-   700px 이하
-   카드 1개
-   ========================================================= */
-
-@media (max-width: 700px) {
-
-    #main-content {
-
-        padding:
-            60px 18px 45px;
-    }
-
-
-    .cards-container {
-
-        grid-template-columns:
-            1fr;
-
-        gap:
-            28px;
-    }
-
-
-    .work-card {
-
-        aspect-ratio:
-            0.88 / 1;
-    }
-
-
-    .card-body {
-
-        padding:
-            19px;
-    }
-
-
-    .card-title {
-
-        font-size:
-            14px;
-    }
-
-
-    .card-date {
-
-        font-size:
-            9px;
-    }
-
-
-    .card-link {
-
-        min-height:
-            42px;
-
-        font-size:
-            10px;
-    }
-
-
-    .page-header {
-
-        margin-bottom:
-            38px;
-    }
-
-}
-
-
-/* =========================================================
-   작은 모바일
+   아주 작은 화면
    ========================================================= */
 
 @media (max-width: 360px) {
 
     #main-content {
 
-        padding-left:
-            13px;
+        padding-left: 13px;
 
-        padding-right:
-            13px;
+        padding-right: 13px;
     }
 
 
     .intro-title {
 
-        font-size:
-            28px;
+        font-size: 28px;
     }
 
 
     .intro-by {
 
-        font-size:
-            10px;
+        font-size: 10px;
     }
 
 
     .intro-for {
 
-        font-size:
-            9px;
+        font-size: 9px;
     }
 
 
@@ -3007,48 +1065,39 @@ enterButton.addEventListener("keydown", function(event) {
         padding:
             14px 20px;
 
-        font-size:
-            10px;
+        font-size: 10px;
     }
 
 
     .card-body {
 
-        padding:
-            16px;
+        padding: 16px;
     }
 
 
     .card-title {
 
-        font-size:
-            12px;
+        font-size: 12px;
     }
 
 
     .card-date {
 
-        font-size:
-            8px;
+        font-size: 8px;
     }
 
 
     .card-link {
 
-        min-height:
-            38px;
+        min-height: 38px;
 
-        font-size:
-            8px;
+        font-size: 8px;
     }
-
 }
 
 
 /* =========================================================
    터치 기기
-
-   모바일에서 hover 효과가 이상하게 남지 않도록 함
    ========================================================= */
 
 @media (hover: none) {
@@ -3062,8 +1111,7 @@ enterButton.addEventListener("keydown", function(event) {
 
     .card-link:hover {
 
-        transform:
-            none;
+        transform: none;
 
         background:
             var(--white);
@@ -3071,11 +1119,699 @@ enterButton.addEventListener("keydown", function(event) {
         color:
             var(--accent);
     }
-
 }
 
 </style>
+</head>
 
+
+<body>
+
+
+<!-- =======================================================
+     배경 파티클
+     ======================================================= -->
+
+<div id="snow-background">
+
+    <span class="snow small"
+          style="left: 4%; animation-duration: 13s; animation-delay: -4s;"></span>
+
+    <span class="snow"
+          style="left: 11%; animation-duration: 17s; animation-delay: -10s;"></span>
+
+    <span class="snow big"
+          style="left: 18%; animation-duration: 21s; animation-delay: -7s;"></span>
+
+    <span class="snow small"
+          style="left: 26%; animation-duration: 15s; animation-delay: -13s;"></span>
+
+    <span class="snow"
+          style="left: 33%; animation-duration: 19s; animation-delay: -3s;"></span>
+
+    <span class="snow small"
+          style="left: 41%; animation-duration: 14s; animation-delay: -9s;"></span>
+
+    <span class="snow big"
+          style="left: 48%; animation-duration: 23s; animation-delay: -17s;"></span>
+
+    <span class="snow"
+          style="left: 56%; animation-duration: 18s; animation-delay: -5s;"></span>
+
+    <span class="snow small"
+          style="left: 63%; animation-duration: 16s; animation-delay: -11s;"></span>
+
+    <span class="snow big"
+          style="left: 70%; animation-duration: 22s; animation-delay: -15s;"></span>
+
+    <span class="snow small"
+          style="left: 77%; animation-duration: 14s; animation-delay: -6s;"></span>
+
+    <span class="snow"
+          style="left: 84%; animation-duration: 20s; animation-delay: -12s;"></span>
+
+    <span class="snow big"
+          style="left: 91%; animation-duration: 24s; animation-delay: -19s;"></span>
+
+    <span class="snow small"
+          style="left: 97%; animation-duration: 17s; animation-delay: -2s;"></span>
+
+</div>
+
+
+<!-- =======================================================
+     전체 페이지
+     ======================================================= -->
+
+<div id="page">
+
+
+    <!-- ===================================================
+         입장 화면
+         =================================================== -->
+
+    <section id="intro-screen">
+
+        <div class="intro-inner">
+
+            <div class="intro-decoration">
+                · · ·
+            </div>
+
+
+            <h1 class="intro-title">
+                &lt;For. <span class="accent">우주</span>&gt;
+            </h1>
+
+
+            <p class="intro-by">
+                By. LR. 리아
+            </p>
+
+
+            <p class="intro-for">
+                스스로 빛나는 태양을 닮은 우주님을 위해.
+            </p>
+
+
+            <button id="enter-button">
+                &gt;이야기로 스며들기&lt;
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         로딩 화면
+         =================================================== -->
+
+    <section id="loading-screen">
+
+        <div class="loading-text">
+            LOADING...
+        </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         메인 콘텐츠
+         =================================================== -->
+
+    <main id="main-content">
+
+        <div class="content-wrapper">
+
+
+            <!-- =================================================
+                 페이지 상단
+                 ================================================= -->
+
+            <header class="page-header">
+
+                <span class="page-header-decoration">
+                    · · · · ·
+                </span>
+
+                <h2 class="page-title">
+                    For. 우주
+                </h2>
+
+                <p class="page-subtitle">
+                    이야기가 머무른 자리.
+                </p>
+
+            </header>
+
+
+            <!-- =================================================
+                 작업물 카드
+                 ================================================= -->
+
+            <section class="cards-container">
+
+
+                <!-- =================================================
+                     카드 1
+                     ================================================= -->
+
+                <article class="work-card">
+
+                    <div class="card-banner">
+
+                        <img
+                            src="a.png"
+                            alt="작업물 배너"
+                        >
+
+                    </div>
+
+
+                    <div class="card-body">
+
+                        <div class="card-info">
+
+                            <h3 class="card-title">
+                                &lt;좀비고 안으로 - 우주&gt;
+                            </h3>
+
+                            <p class="card-date">
+                                작업일자: 2025. 09
+                            </p>
+
+                        </div>
+
+
+                        <a
+                            class="card-link"
+                            href="https://share.novela.so/file/68b6ac25e683fcde1db6dc18"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            &gt;"두 사람의 시작 속으로"
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- =================================================
+                     카드 2
+                     ================================================= -->
+
+                <article class="work-card">
+
+                    <div class="card-banner">
+
+                        <img
+                            src="b.png"
+                            alt="작업물 배너"
+                        >
+
+                    </div>
+
+
+                    <div class="card-body">
+
+                        <div class="card-info">
+
+                            <h3 class="card-title">
+                                &lt;마법고 - 메신저피시&gt;
+                            </h3>
+
+                            <p class="card-date">
+                                작업일자: 2025. 09
+                            </p>
+
+                        </div>
+
+
+                        <a
+                            class="card-link"
+                            href="https://share.novela.so/file/68c24ab45813ce1d99258cef"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            &gt;"모든 일이 끝나면 좀비고등학교로 다시..."
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- =================================================
+                     카드 3
+                     ================================================= -->
+
+                <article class="work-card">
+
+                    <div class="card-banner">
+
+                        <img
+                            src="c.png"
+                            alt="작업물 배너"
+                        >
+
+                    </div>
+
+
+                    <div class="card-body">
+
+                        <div class="card-info">
+
+                            <h3 class="card-title">
+                                &lt;악마라면 장난을 쳐야 하는 법이지!&gt;
+                            </h3>
+
+                            <p class="card-date">
+                                작업일자: 2025. 11
+                            </p>
+
+                        </div>
+
+
+                        <a
+                            class="card-link"
+                            href="https://share.novela.so/file/6916d02db68fdfd39c09de7b"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            &gt;"붉은 달이 뜬 그날."
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- =================================================
+                     카드 4
+                     ================================================= -->
+
+                <article class="work-card">
+
+                    <div class="card-banner">
+
+                        <img
+                            src="d.png"
+                            alt="작업물 배너"
+                        >
+
+                    </div>
+
+
+                    <div class="card-body">
+
+                        <div class="card-info">
+
+                            <h3 class="card-title">
+                                &lt;소악마 외전&gt;
+                            </h3>
+
+                            <p class="card-date">
+                                작업일자: 2025. 12
+                            </p>
+
+                        </div>
+
+
+                        <a
+                            class="card-link"
+                            href="https://share.novela.so/file/693b4c939161c5b2be8c52ef"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            &gt;"언제까지나 가족일 거라는 확신"
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- =================================================
+                     카드 5
+                     ================================================= -->
+
+                <article class="work-card">
+
+                    <div class="card-banner">
+
+                        <img
+                            src="f.png"
+                            alt="작업물 배너"
+                        >
+
+                    </div>
+
+
+                    <div class="card-body">
+
+                        <div class="card-info">
+
+                            <h3 class="card-title">
+                                &lt;설산&gt;
+                            </h3>
+
+                            <p class="card-date">
+                                작업일자: 2025. 12
+                            </p>
+
+                        </div>
+
+
+                        <a
+                            class="card-link"
+                            href="https://share.novela.so/file/6947b3e315e79501f2e0e65b"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            &gt;"난 잘 못 지내고 있어"
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- =================================================
+                     카드 6
+                     ================================================= -->
+
+                <article class="work-card">
+
+                    <div class="card-banner">
+
+                        <img
+                            src="e.png"
+                            alt="작업물 배너"
+                        >
+
+                    </div>
+
+
+                    <div class="card-body">
+
+                        <div class="card-info">
+
+                            <h3 class="card-title">
+                                &lt;"Selfish"&gt;
+                            </h3>
+
+                            <p class="card-date">
+                                작업일자: 2026. 01
+                            </p>
+
+                        </div>
+
+
+                        <a
+                            class="card-link"
+                            href="https://share.novela.so/file/695b8717cb668a4650684489"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            &gt;"지독하게 ■■■인"
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+            </section>
+
+
+            <!-- =================================================
+                 하단 출처
+                 ================================================= -->
+
+            <footer class="footer">
+
+                <div>
+                    제작 | LR. 리아
+                </div>
+
+                <div>
+                    For | 우주
+                </div>
+
+            </footer>
+
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<!-- =========================================================
+     JavaScript
+     ========================================================= -->
+
+<script>
+
+
+/* =========================================================
+   요소 가져오기
+   ========================================================= */
+
+const enterButton =
+    document.getElementById("enter-button");
+
+const introScreen =
+    document.getElementById("intro-screen");
+
+const loadingScreen =
+    document.getElementById("loading-screen");
+
+const mainContent =
+    document.getElementById("main-content");
+
+const workCards =
+    document.querySelectorAll(".work-card");
+
+const bannerImages =
+    document.querySelectorAll(".card-banner img");
+
+
+/* =========================================================
+   입장 버튼
+   ========================================================= */
+
+enterButton.addEventListener(
+    "click",
+    function() {
+
+
+        /* 입장 화면 숨기기 */
+
+        introScreen.classList.add("hide");
+
+
+        /* 로딩 화면 표시 */
+
+        loadingScreen.classList.add("show");
+
+
+        /* 1.5초 대기 */
+
+        setTimeout(
+            function() {
+
+
+                /* 로딩 화면 숨기기 */
+
+                loadingScreen.classList.remove("show");
+
+
+                /* 메인 페이지 표시 */
+
+                mainContent.classList.add("show");
+
+
+                /* 카드 순차 등장 */
+
+                workCards.forEach(
+                    function(card, index) {
+
+                        setTimeout(
+                            function() {
+
+                                card.classList.add(
+                                    "visible"
+                                );
+
+                            },
+                            150 + (index * 130)
+                        );
+
+                    }
+                );
+
+
+            },
+            1500
+        );
+
+    }
+);
+
+
+/* =========================================================
+   이미지 처리
+   ========================================================= */
+
+bannerImages.forEach(
+    function(image) {
+
+
+        image.addEventListener(
+            "load",
+            function() {
+
+                image.classList.add(
+                    "image-loaded"
+                );
+
+            }
+        );
+
+
+        image.addEventListener(
+            "error",
+            function() {
+
+                image.style.display =
+                    "none";
+
+                image.parentElement.classList.add(
+                    "image-missing"
+                );
+
+            }
+        );
+
+
+        /*
+         * 이미지가 캐시되어 load 이벤트가
+         * 이미 발생한 경우를 대비
+         */
+
+        if (image.complete) {
+
+            if (image.naturalWidth > 0) {
+
+                image.classList.add(
+                    "image-loaded"
+                );
+
+            } else {
+
+                image.style.display =
+                    "none";
+
+                image.parentElement.classList.add(
+                    "image-missing"
+                );
+
+            }
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   카드 hover
+   ========================================================= */
+
+workCards.forEach(
+    function(card) {
+
+
+        card.addEventListener(
+            "mouseenter",
+            function() {
+
+                /*
+                 * 아직 등장하지 않은 카드에는
+                 * hover 효과를 적용하지 않음.
+                 */
+
+                if (
+                    !card.classList.contains(
+                        "visible"
+                    )
+                ) {
+
+                    return;
+
+                }
+
+
+                card.style.transform =
+                    "translateY(-4px)";
+
+            }
+        );
+
+
+        card.addEventListener(
+            "mouseleave",
+            function() {
+
+                if (
+                    !card.classList.contains(
+                        "visible"
+                    )
+                ) {
+
+                    return;
+
+                }
+
+
+                card.style.transform =
+                    "translateY(0)";
+
+            }
+        );
+
+    }
+);
+
+
+/* =========================================================
+   키보드 접근성
+   ========================================================= */
+
+enterButton.addEventListener(
+    "keydown",
+    function(event) {
+
+        if (
+            event.key === "Enter" ||
+            event.key === " "
+        ) {
+
+            event.preventDefault();
+
+            enterButton.click();
+
+        }
+
+    }
+);
+
+
+</script>
 
 </body>
 </html>
